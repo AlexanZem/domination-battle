@@ -34,6 +34,15 @@ module.exports = merge(common, {
 				loader: 'babel-loader'
 			},
 			{
+				test: /\.(html)$/,
+				use: {
+					loader: 'html-loader',
+					options: {
+						attrs: [':data-src']
+					}
+				}
+			},
+			{
 				test: /\.s?css$/i,
 				use: ['style-loader', 'css-loader?sourceMap=true', 'sass-loader']
 			}
